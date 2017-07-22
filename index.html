@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-    <div id="main" style="width: 600px;height:400px;"></div>
+    <div id="main" style="width: 800px;height:400px;"></div>
     <script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('main'));
@@ -20,10 +20,10 @@
             },
             tooltip: {},
             legend: {
-                data:['销量']
+                data:['数据']
             },
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                data: ["衬衫","羊毛衫","裙子","裤子","高跟鞋","袜子"]
             },
             yAxis: {},
             series: [{
