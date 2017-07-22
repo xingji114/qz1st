@@ -8,117 +8,120 @@
   <script src="echarts.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <!--[if lte IE 8]><script src="assets/js/html5shiv.js"></script><![endif]-->
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="html5up-identity/assets/css/main.css" />
   <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
   <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <noscript><link rel="stylesheet" href="html5up-identity/assets/css/noscript.css" /></noscript>
 </head>
 
 <body>
-  <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
-  <div id="main" style="width: 800px;height: 800px;"></div>
-  <script type="text/javascript">
-    var myChart = echarts.init(document.getElementById('main'));
+  <div id="wrapper">
 
-    // Schema:
-    // date,ID,AI,PS,ACD,SU,ArcGis
-    var dataBJ = [
-      [90, 90, 95, 85, 85, 80, 90 ],
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 500px;height: 500px;"></div>
+    <script type="text/javascript">
+      var myChart = echarts.init(document.getElementById('main'));
 
-    ];
+      // Schema:
+      // date,ID,AI,PS,ACD,SU,ArcGis
+      var dataBJ = [
+        [90, 90, 95, 85, 85, 80, 90],
 
-    var lineStyle = {
-      normal: {
-        width: 1,
-        opacity: 0.5
-      }
-    };
+      ];
 
-    option = {
-      backgroundColor: '#161627',
-      title: {
-        text: '个 人 技 能',
-        left: 'center',
-        textStyle: {fontSize:'18',
-         fontStyle:'oblique',
-          color: '#eee'
+      var lineStyle = {
+        normal: {
+          width: 1,
+          opacity: 0.5
         }
-      },
-      legend: {
-        bottom: 5,
-        data: ['北京'],
-        itemGap: 20,
-        textStyle: {
-          color: '#fff',
-          fontSize: 14
-        },
-        selectedMode: 'single'
-      },
-      // visualMap: {
-      //     show: true,
-      //     min: 0,
-      //     max: 20,
-      //     dimension: 6,
-      //     inRange: {
-      //         colorLightness: [0.5, 0.8]
-      //     }
-      // },
-      radar: {
-        indicator: [{
-            name: 'ID',
-            max: 100
-          },
-          {
-            name: 'AI',
-            max: 100
-          },
-          {
-            name: 'PS',
-            max: 100
-          },
-          {
-            name: 'CAD',
-            max: 100
-          },
-          {
-            name: 'SU',
-            max: 100
-          },
-          {
-            name: 'ArcGis',
-            max: 100
-          },
-          {
-            name: 'Office',
-            max: 100
-          },
-        ],
-        shape: 'circle',
-        splitNumber: 5,
-        name: {
+      };
+
+      option = {
+        backgroundColor: '#161627',
+        title: {
+          text: '个 人 技 能',
+          left: 'center',
           textStyle: {
-            fontWeight: 'bold',
-            fontSize:'16',
-            color: 'rgb(238, 197, 102)'
+            fontSize: '14',
+            fontStyle: 'oblique',
+            color: '#eee'
           }
         },
-        splitLine: {
-          lineStyle: {
-            color: [
-              'rgba(238, 197, 102, 0.1)', 'rgba(238, 197, 102, 0.2)',
-            ].reverse()
+        legend: {
+          bottom: 5,
+          data: ['qz'],
+          itemGap: 20,
+          textStyle: {
+            color: '#fff',
+            fontSize: 14
+          },
+          selectedMode: 'single'
+        },
+        // visualMap: {
+        //     show: true,
+        //     min: 0,
+        //     max: 20,
+        //     dimension: 6,
+        //     inRange: {
+        //         colorLightness: [0.5, 0.8]
+        //     }
+        // },
+        radar: {
+          indicator: [{
+              name: 'ID',
+              max: 100
+            },
+            {
+              name: 'AI',
+              max: 100
+            },
+            {
+              name: 'PS',
+              max: 100
+            },
+            {
+              name: 'CAD',
+              max: 100
+            },
+            {
+              name: 'SU',
+              max: 100
+            },
+            {
+              name: 'ArcGis',
+              max: 100
+            },
+            {
+              name: 'Office',
+              max: 100
+            },
+          ],
+          shape: 'circle',
+          splitNumber: 5,
+          name: {
+            textStyle: {
+              fontWeight: 'bold',
+              fontSize: '12',
+              color: 'rgb(238, 197, 102)'
+            }
+          },
+          splitLine: {
+            lineStyle: {
+              color: [
+                'rgba(238, 197, 102, 0.1)', 'rgba(238, 197, 102, 0.2)',
+              ].reverse()
+            }
+          },
+          splitArea: {
+            show: false
+          },
+          axisLine: {
+            lineStyle: {
+              color: 'rgba(238, 197, 102, 0.5)'
+            }
           }
         },
-        splitArea: {
-          show: false
-        },
-        axisLine: {
-          lineStyle: {
-            color: 'rgba(238, 197, 102, 0.5)'
-          }
-        }
-      },
-      series: [{
+        series: [{
           name: 'qz',
           type: 'radar',
           lineStyle: lineStyle,
@@ -140,9 +143,10 @@
             opacity: 0.05
           }
         }
-    };
-    myChart.setOption(option);
-  </script>
+      };
+      myChart.setOption(option);
+    </script>
+  </div>
 </body>
 
 </html>
